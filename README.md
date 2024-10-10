@@ -1,48 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anton KeyGen Pro</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            height: 100vh; /* Mengatur tinggi viewport */
-            background-color: #f8f9fa; /* Warna latar belakang */
-            font-family: Arial, sans-serif; /* Font yang digunakan */
-            margin: 0; /* Menghilangkan margin default */
-        }
-        
-        h1 {
-            text-align: center;
-            color: #343a40; /* Warna teks */
-        }
-
-        img {
-            width: 320px; /* Lebar gambar */
-            border-radius: 10px; /* Sudut melengkung */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan untuk efek 3D */
-        }
-
-        strong {
-            font-size: 24px; /* Ukuran font untuk nama proyek */
-            margin-top: 20px; /* Jarak atas */
-            display: block; /* Membuat teks muncul di baris baru */
-        }
-    </style>
-</head>
-<body>
-
-    <h1>
-        <img src="media/logo.jpg" alt="Anton KeyGen Pro Logo">
-        <strong>Anton KeyGen Pro 🔑</strong>
-    </h1>
-
-</body>
-</html>
+<h1 align="center">
+	<br>
+	<br>
+	<img width="320" src="media/logo.jpg" alt="Anton KeyGen Pro 🔑">
+	<br>
+	<br>
+	<br>
+</h1>
 
 
 # Anton KeyGen Pro 🔑
