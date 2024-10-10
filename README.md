@@ -86,20 +86,18 @@ const {
 ```
 
 ## Hashtags
-
-```Hashtags
-#KeyGenerator 
-#RandomKey 
-#LicenseKey 
-#UniqueID 
-#SecureKeys 
-#NodeJS 
-#Cryptography 
-#SecureRandom 
-#APIKeys 
-#PasswordGenerator 
-#NPMModule 
-#SoftwareSecurity 
-#KeyManagement 
-#SecureTokens 
-#OpenSource
+#keygenerator 
+#randomkey 
+#licensekey 
+#uniqueid 
+#securekeys 
+#nodejs 
+#cryptography 
+#securerandom 
+#apikeys 
+#passwordgenerator 
+#npmmodule 
+#softwaresecurity 
+#keymanagement 
+#securetokens 
+#opensource
