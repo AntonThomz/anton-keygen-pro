@@ -1,13 +1,13 @@
 {
   "name": "anton-keygen-pro",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "🔥 Anton KeyGen Pro: A Powerful Utility for Generating Random Keys! 🔑",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
   "keywords": [
-    "anton-key-generator",
+    "anton-keygen-pro",
     "key-generator",
     "random-key",
     "lowercase",
