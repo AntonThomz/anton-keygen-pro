@@ -1,0 +1,42 @@
+{
+  "name": "anton-keygen-pro",
+  "version": "1.0.1",
+  "description": "🔥 Anton KeyGen Pro: A Powerful Utility for Generating Random Keys! 🔑",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "anton-key-generator",
+    "key-generator",
+    "random-key",
+    "lowercase",
+    "npm-package",
+    "license-key",
+    "unique-id",
+    "identifier",
+    "segmented-key"
+  ],
+  "author": "AntonSpy",
+  "license": "MIT",
+  "dependencies": {
+    "crypto": "^1.0.1"
+  },
+  "features": {
+    "randomized-keys": "Generates completely random keys consisting of uppercase letters and numbers, ensuring uniqueness in each instance.",
+    "segmented-format": "Outputs the key in a structured format, divided into four segments (e.g., ABCD-1234-EFGH-5678) with each segment containing 4 characters.",
+    "lowercase-conversion": "Returns the key in all lowercase format for consistent styling and easy integration into systems requiring lowercase input.",
+    "cryptographic-security": "Utilizes Node.js's 'crypto' module for secure random byte generation, ensuring high levels of randomness.",
+    "customizable": "Can be easily extended to modify the length of segments, the number of segments, or the character set used."
+  },
+  "design": {
+    "simplicity": "Designed to be lightweight, the package offers an easy-to-use API with a single exported function, allowing developers to quickly integrate the functionality.",
+    "modularity": "The package is designed with extensibility in mind, enabling developers to adjust or enhance key generation behavior according to their needs.",
+    "reliability": "Leveraging native Node.js modules, this package ensures reliable performance and randomness even in high-scale applications."
+  },
+  "homepage": "https://github.com/AntonThomz/anton-keygen-pro#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AntonThomz/anton-keygen-pro.git"
+  }
+}
