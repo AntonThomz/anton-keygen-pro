@@ -20,12 +20,10 @@ Untuk menginstal paket ini, gunakan npm dengan perintah berikut:
 
 ```bash
 npm install anton-keygen-pro
+```
+## Contoh pengguna
 
-## Contoh Penggunaan
-
-Berikut adalah contoh cara menggunakan **Anton KeyGen Pro** dalam proyek Anda:
-
-```javascript
+```bash
 // Mengimpor fungsi AntonKeyGen dari paket
 const { AntonKeyGen } = require('anton-keygen-pro');
 
