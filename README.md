@@ -1,6 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anton KeyGen Pro</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh; /* Mengatur tinggi viewport */
+            background-color: #f8f9fa; /* Warna latar belakang */
+            font-family: Arial, sans-serif; /* Font yang digunakan */
+            margin: 0; /* Menghilangkan margin default */
+        }
+        
+        h1 {
+            text-align: center;
+            color: #343a40; /* Warna teks */
+        }
+
+        img {
+            width: 320px; /* Lebar gambar */
+            border-radius: 10px; /* Sudut melengkung */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan untuk efek 3D */
+        }
+
+        strong {
+            font-size: 24px; /* Ukuran font untuk nama proyek */
+            margin-top: 20px; /* Jarak atas */
+            display: block; /* Membuat teks muncul di baris baru */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>
+        <img src="media/logo.jpg" alt="Anton KeyGen Pro Logo">
+        <strong>Anton KeyGen Pro 🔑</strong>
+    </h1>
+
+</body>
+</html>
+
+
 # Anton KeyGen Pro 🔑
 
 **Anton KeyGen Pro** adalah utilitas yang kuat untuk menghasilkan kunci acak dengan format tersegmentasi yang dapat disesuaikan. Proyek ini dirancang untuk membantu pengembang dalam membuat pengenal unik, kunci lisensi, atau kode untuk aplikasi mereka.
+
+## Penjelasan Proyek: AntonKeyGen
+
+AntonKeyGen adalah utilitas yang dirancang untuk menghasilkan kunci acak dengan format tersegmentasi, memungkinkan pengembang untuk membuat pengenal unik yang dapat digunakan untuk berbagai aplikasi, seperti lisensi perangkat lunak, identifikasi pengguna, atau kunci akses. Kunci yang dihasilkan terdiri dari kombinasi huruf kapital dan angka, yang menjamin keunikan dan keamanan.
+
+Berikut adalah contoh kunci yang dihasilkan oleh AntonKeyGen:
+
+- **Contoh dari AntonKeyGen**: `MBIZ-FPMC-V5S4-PVHG`  
+  Kunci ini terdiri dari empat segmen, masing-masing dengan empat karakter, dan dipisahkan oleh tanda hubung.
+
+- **Contoh dari AntonKeyGen2**: `HMQO-AATN-JSKT-GMQJ`  
+  Kunci ini juga mengikuti format yang sama, memberikan kombinasi yang berbeda dan unik.
+
+- **Contoh dari AntonKeyGen3**: `4821-5824-5583-1135`  
+  Kunci ini menunjukkan penggunaan angka dalam format tersegmentasi yang memudahkan pembacaan dan penggunaan.
+
+- **Contoh dari AntonKeyGen4**: `JW3K-98TW-6V37`  
+  Kunci ini menampilkan campuran huruf dan angka dengan segmentasi yang jelas, menjadikannya mudah diingat.
+
+- **Contoh dari AntonKeyGen5**: `TYXD-GKDM-QIAM`  
+  Kunci ini memberikan kombinasi unik yang dapat digunakan untuk tujuan khusus seperti pengenal produk.
+
+- **Contoh dari AntonKeyGen6**: `3307-6584-2503`  
+  Kunci ini berfokus pada penggunaan angka, menjadikannya ideal untuk aplikasi yang memerlukan format numerik.
+
+Dengan kemampuan untuk menghasilkan kunci dalam berbagai format, **AntonKeyGen** menawarkan fleksibilitas dan keamanan yang tinggi, memungkinkan pengguna untuk menyesuaikan kunci sesuai dengan kebutuhan spesifik aplikasi mereka.
 
 ## Fitur
 
@@ -20,15 +93,30 @@ Untuk menginstal paket ini, gunakan npm dengan perintah berikut:
 
 ```bash
 npm install anton-keygen-pro
-```
-## Contoh pengguna
 
-```bash
-// Mengimpor fungsi AntonKeyGen dari paket
-const { AntonKeyGen } = require('anton-keygen-pro');
+## contoh pengguna
 
-// Menghasilkan kunci baru
-const generatedKey = AntonKeyGen();
+```js
+const {
+ AntonKeyGen, 
+ AntonKeyGen2, 
+ AntonKeyGen3, 
+ AntonKeyGen4,
+ AntonKeyGen5,
+ AntonKeyGen6
+} = require('anton-keygen-pro');
 
-// Menampilkan kunci yang dihasilkan di konsol
-console.log(`Kunci yang dihasilkan: ${generatedKey}`);
+(async () => {
+    const generatedKey = await AntonKeyGen();
+    const generatedKey2 = await AntonKeyGen2();
+    const generatedKey3 = await AntonKeyGen3();
+    const generatedKey4 = await AntonKeyGen4();
+    const generatedKey5 = await AntonKeyGen5();
+    const generatedKey6 = await AntonKeyGen6();
+    console.log("Contoh dari AntonKeyGen:", generatedKey);
+    console.log("Contoh dari AntonKeyGen2:", generatedKey2);
+    console.log("Contoh dari AntonKeyGen3:", generatedKey3);
+    console.log("Contoh dari AntonKeyGen4:", generatedKey4);
+    console.log("Contoh dari AntonKeyGen5:", generatedKey5);
+    console.log("Contoh dari AntonKeyGen6:", generatedKey6);
+})();
