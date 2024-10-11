@@ -4,8 +4,9 @@
   "description": "🔥 Anton KeyGen Pro: A Powerful Utility for Generating Random Keys! 🔑",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
-  },
+    "start": "node index.js",
+    "test": "mocha"
+},
   "keywords": [
     "anton-keygen-pro",
     "key-generator",
