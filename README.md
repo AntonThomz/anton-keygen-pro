@@ -1,12 +1,11 @@
 <h1 align="center">
-	<br>
-	<br>
-	<img width="320" src="media/logo.jpg" alt="Anton KeyGen Pro 🔑">
-	<br>
-	<br>
-	<br>
+    <br>
+    <br>
+    <img width="320" src="media/logo.jpg" alt="Anton KeyGen Pro 🔑">
+    <br>
+    <br>
+    <br>
 </h1>
-
 
 # Anton KeyGen Pro 🔑
 
@@ -14,90 +13,69 @@
 
 ## Penjelasan Proyek: AntonKeyGen
 
-AntonKeyGen adalah utilitas yang dirancang untuk menghasilkan kunci acak dengan format tersegmentasi, memungkinkan pengembang untuk membuat pengenal unik yang dapat digunakan untuk berbagai aplikasi, seperti lisensi perangkat lunak, identifikasi pengguna, atau kunci akses. Kunci yang dihasilkan terdiri dari kombinasi huruf kapital dan angka, yang menjamin keunikan dan keamanan.
-
-Berikut adalah contoh kunci yang dihasilkan oleh AntonKeyGen:
-
-- **Contoh dari AntonKeyGen**: `MBIZ-FPMC-V5S4-PVHG`  
-  Kunci ini terdiri dari empat segmen, masing-masing dengan empat karakter, dan dipisahkan oleh tanda hubung.
-
-- **Contoh dari AntonKeyGen2**: `HMQO-AATN-JSKT-GMQJ`  
-  Kunci ini juga mengikuti format yang sama, memberikan kombinasi yang berbeda dan unik.
-
-- **Contoh dari AntonKeyGen3**: `4821-5824-5583-1135`  
-  Kunci ini menunjukkan penggunaan angka dalam format tersegmentasi yang memudahkan pembacaan dan penggunaan.
-
-- **Contoh dari AntonKeyGen4**: `JW3K-98TW-6V37`  
-  Kunci ini menampilkan campuran huruf dan angka dengan segmentasi yang jelas, menjadikannya mudah diingat.
-
-- **Contoh dari AntonKeyGen5**: `TYXD-GKDM-QIAM`  
-  Kunci ini memberikan kombinasi unik yang dapat digunakan untuk tujuan khusus seperti pengenal produk.
-
-- **Contoh dari AntonKeyGen6**: `3307-6584-2503`  
-  Kunci ini berfokus pada penggunaan angka, menjadikannya ideal untuk aplikasi yang memerlukan format numerik.
-
 Dengan kemampuan untuk menghasilkan kunci dalam berbagai format, **AntonKeyGen** menawarkan fleksibilitas dan keamanan yang tinggi, memungkinkan pengguna untuk menyesuaikan kunci sesuai dengan kebutuhan spesifik aplikasi mereka.
 
-## Fitur
+## Penjelasan File `index.js` dalam Anton KeyGen Pro
 
-- **Kunci Acak**: Menghasilkan kunci yang sepenuhnya acak yang terdiri dari huruf kapital dan angka, memastikan keunikan di setiap instance. Ini sangat berguna untuk keperluan seperti pengenal pengguna atau kunci lisensi.
+File `index.js` pada proyek **Anton KeyGen Pro** berfungsi sebagai inti dari generator kunci acak. File ini memanfaatkan modul kriptografi bawaan dari Node.js (`crypto`) untuk memastikan kunci yang dihasilkan memiliki tingkat keamanan yang tinggi dan benar-benar acak.
 
-- **Format Tersegmentasi**: Kunci yang dihasilkan akan diformat dalam struktur yang tersegmentasi, dibagi menjadi empat segmen (misalnya, `ABCD-1234-EFGH-5678`) dengan setiap segmen berisi 4 karakter. Format ini membuat kunci lebih mudah dibaca dan digunakan.
+Pada file ini, terdapat beberapa fungsi untuk menghasilkan kunci dalam berbagai format, seperti:
 
-- **Konversi ke Huruf Kecil**: Kunci yang dihasilkan dikembalikan dalam format huruf kecil, menjamin konsistensi gaya dan memudahkan integrasi ke dalam sistem yang memerlukan input huruf kecil.
+1. **key1**: Menghasilkan kunci yang terdiri dari kombinasi huruf kapital dan angka, tersegmentasi menjadi 4 bagian, masing-masing dengan 4 karakter.
+   
+2. **key2**: Menghasilkan kunci yang hanya terdiri dari huruf kapital.
 
-- **Keamanan Kriptografis**: Menggunakan modul `crypto` dari Node.js untuk menghasilkan byte acak yang aman, memastikan tingkat keacakan yang tinggi dan mengurangi kemungkinan prediksi kunci.
+3. **key3**: Menghasilkan kunci yang hanya terdiri dari angka, cocok untuk aplikasi yang memerlukan format numerik.
 
-- **Kustomisasi**: Mudah diperluas untuk memodifikasi panjang segmen, jumlah segmen, atau set karakter yang digunakan, memberikan fleksibilitas kepada pengembang untuk menyesuaikan kunci sesuai kebutuhan aplikasi mereka.
+4. **key4**: Kunci tersegmentasi dengan tiga segmen yang terdiri dari kombinasi huruf kapital dan angka.
 
-## Instalasi
+5. **key5**: Mirip dengan AntonKeyGen4, tetapi hanya menggunakan huruf kapital.
+
+6. **key6**: Hanya menggunakan angka dengan tiga segmen.
+
+7. **key7**: Kunci acak berbasis byte yang dihasilkan menggunakan fungsi `crypto.randomBytes`, memberikan tingkat keamanan yang lebih tinggi dengan menghasilkan 32 karakter dalam format hexadecimal.
+
+### Contoh Fungsi Utama
+
+```javascript
+const AntonKeyGen = () => generateKey(4, 4, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789');
+const AntonKeyGen2 = () => generateKey(4, 4, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ');
+const AntonKeyGen3 = () => generateKey(4, 4, '0123456789');
+const AntonKeyGen4 = () => generateKey(3, 4, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789');
+const AntonKeyGen5 = () => generateKey(3, 4, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ');
+const AntonKeyGen6 = () => generateKey(3, 4, '0123456789');
+const AntonKeyGen7 = () => crypto.randomBytes(16).toString('hex');
+````
+# Instalasi
 
 Untuk menginstal paket ini, gunakan npm dengan perintah berikut:
 
-```bash
 npm install anton-keygen-pro
-```
-## contoh pengguna
+
+## Contoh Penggunaan
 
 ```javascript
 const {
- AntonKeyGen, 
- AntonKeyGen2, 
- AntonKeyGen3, 
- AntonKeyGen4,
- AntonKeyGen5,
- AntonKeyGen6
+ key1, 
+ key2, 
+ key3, 
+ key4, 
+ key5, 
+ key6, 
+ key7
 } = require('anton-keygen-pro');
 
 (async () => {
-    const generatedKey = await AntonKeyGen();
-    const generatedKey2 = await AntonKeyGen2();
-    const generatedKey3 = await AntonKeyGen3();
-    const generatedKey4 = await AntonKeyGen4();
-    const generatedKey5 = await AntonKeyGen5();
-    const generatedKey6 = await AntonKeyGen6();
-    console.log("Contoh dari AntonKeyGen:", generatedKey);
-    console.log("Contoh dari AntonKeyGen2:", generatedKey2);
-    console.log("Contoh dari AntonKeyGen3:", generatedKey3);
-    console.log("Contoh dari AntonKeyGen4:", generatedKey4);
-    console.log("Contoh dari AntonKeyGen5:", generatedKey5);
-    console.log("Contoh dari AntonKeyGen6:", generatedKey6);
+    console.log(key1);
+    console.log(key2);
+    console.log(key3);
+    console.log(key4);
+    console.log(key5);
+    console.log(key6);
+    console.log(key7);
 })();
 ```
 
-## Hashtags
-#keygenerator 
-#randomkey 
-#licensekey 
-#uniqueid 
-#securekeys 
-#nodejs 
-#cryptography 
-#securerandom 
-#apikeys 
-#passwordgenerator 
-#npmmodule 
-#softwaresecurity 
-#keymanagement 
-#securetokens 
-#opensource
+## report bug
+
+<span style="color: red;">[Report bug](https://wa.me/6283198645688)</span>

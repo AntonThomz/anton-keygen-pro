@@ -1,207 +1,43 @@
-function _0x2bab() {
-	const _0x5aa6eb = [
-		'772261jPpnDL', 
-		'length', 
-		'hFxXR', 
-		'KprWP', 
-		'0123456789', 
-		'4609KSGcRQ', 
-		'18jPjOmo', 
-		'VPAFN', 
-		'CtccN', 
-		'1843648lmExPF', 
-		'2FJiyxV', 
-		'1184712KOrbvy', 
-		'aAeah', 
-		'734460ZNwbLm', 
-		'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 
-		'26150oghbjb', 
-		'randomBytes', 
-		'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789', 
-		'exports', 
-		'PMxGO', 
-		'GPrUR', 
-		'crypto', 
-		'woGCf', 
-		'YTGgv', 
-		'bFonW', 
-		'257925sOEsqT', 
-		'vMUNb', 
-		'pFIrd', 
-		'418794CnLNvY', 
-		'eujDD', 
-		'5REEGdb', 
-		'afXAW', 
-		'QxsNQ'
-	];
-	_0x2bab = function() {
-		return _0x5aa6eb;
-	};
-	return _0x2bab();
-}
-const _0x2fd2f5 = _0x13fe;
-(function(_0x412c92, _0x298d4a) {
-	const _0x2525e1 = _0x13fe, _0x45a5ca = _0x412c92();
-	while ( !! []) {
-		try {
-			const _0x208ce8 = parseInt(_0x2525e1(0x1d1)) / 0x1 + parseInt(_0x2525e1(0x1c2)) / 0x2 * (parseInt(_0x2525e1(0x1c3)) / 0x3) + parseInt(_0x2525e1(0x1c5)) / 0x4 + parseInt(_0x2525e1(0x1d6)) / 0x5 * (-parseInt(_0x2525e1(0x1d4)) / 0x6) + parseInt(_0x2525e1(0x1d9)) / 0x7 + parseInt(_0x2525e1(0x1c1)) / 0x8 * (parseInt(_0x2525e1(0x1df)) / 0x9) + parseInt(_0x2525e1(0x1c7)) / 0xa * (-parseInt(_0x2525e1(0x1de)) / 0xb);
-			if (_0x208ce8 === _0x298d4a) break;
-			else _0x45a5ca['push'](_0x45a5ca['shift']());
-		} catch (_0x448a68) {
-			_0x45a5ca['push'](_0x45a5ca['shift']());
-		}
-	}
-}(_0x2bab, 0x3b213));
-const crypto = require(_0x2fd2f5(0x1cd));
+const crypto = require('crypto');
 
-function AntonKeyGen() {
-	const _0x3a6669 = _0x2fd2f5, _0x305a03 = {
-		'MtmHW': _0x3a6669(0x1c9),
-		'QxsNQ': function(_0xc4a2a9, _0x1218e8) {
-			return _0xc4a2a9 < _0x1218e8;
-		},
-		'hFxXR': function(_0xb2fcbb, _0x45793f) {
-			return _0xb2fcbb < _0x45793f;
-		}
-	}, _0x3e62cf = _0x305a03['MtmHW'];
-	let _0x43ea65 = '', _0x82c244 = 0x0;
-	while (_0x305a03[_0x3a6669(0x1d8)](_0x82c244, 0x4)) {
-		let _0x58ae04 = '';
-		for (let _0x1770ce = 0x0; _0x305a03['QxsNQ'](_0x1770ce, 0x4); _0x1770ce++) {
-			const _0x24576d = crypto[_0x3a6669(0x1c8)](0x1), _0x7dcd1e = _0x24576d[0x0] % _0x3e62cf[_0x3a6669(0x1da)];
-			_0x58ae04 += _0x3e62cf[_0x7dcd1e];
-		}
-		_0x43ea65 += _0x58ae04, _0x305a03[_0x3a6669(0x1db)](_0x82c244, 0x3) && (_0x43ea65 += '-'), _0x82c244++;
-	}
-	return _0x43ea65;
+function generateKey(segmentCount, segmentLength, characters) {
+  let key = '';
+  for (let i = 0; i < segmentCount; i++) {
+    let segment = '';
+    for (let j = 0; j < segmentLength; j++) {
+      const randomIndex = crypto.randomInt(0, characters.length);
+      segment += characters[randomIndex];
+    }
+    key += segment + (i < segmentCount - 1 ? '-' : '');
+  }
+  return key;
 }
-function AntonKeyGen2() {
-	const _0x2ff2bc = _0x2fd2f5, _0xeb6af2 = {
-		'afXAW': function(_0x39bf39, _0x2922a4) {
-			return _0x39bf39 < _0x2922a4;
-		},
-		'eujDD': function(_0x5602a8, _0x3fe150) {
-			return _0x5602a8 < _0x3fe150;
-		},
-		'YTGgv': function(_0x20c38b, _0x5454cd) {
-			return _0x20c38b % _0x5454cd;
-		}
-	}, _0x5b72c8 = _0x2ff2bc(0x1c6);
-	let _0x5b737d = '', _0x1f73df = 0x0;
-	while (_0xeb6af2[_0x2ff2bc(0x1d7)](_0x1f73df, 0x4)) {
-		let _0x59549d = '';
-		for (let _0x33eb90 = 0x0; _0xeb6af2[_0x2ff2bc(0x1d5)](_0x33eb90, 0x4); _0x33eb90++) {
-			const _0x5a7d83 = crypto['randomBytes'](0x1), _0x49c740 = _0xeb6af2[_0x2ff2bc(0x1cf)](_0x5a7d83[0x0], _0x5b72c8['length']);
-			_0x59549d += _0x5b72c8[_0x49c740];
-		}
-		_0x5b737d += _0x59549d, _0xeb6af2[_0x2ff2bc(0x1d7)](_0x1f73df, 0x3) && (_0x5b737d += '-'), _0x1f73df++;
-	}
-	return _0x5b737d;
-}
-function AntonKeyGen3() {
-	const _0x2ece02 = _0x2fd2f5, _0x7a97af = {
-		'KprWP': _0x2ece02(0x1dd),
-		'VPAFN': function(_0x279ea2, _0x288a15) {
-			return _0x279ea2 < _0x288a15;
-		},
-		'ohXbK': function(_0x558760, _0x4d7fea) {
-			return _0x558760 < _0x4d7fea;
-		},
-		'GPrUR': function(_0x1f4f93, _0x4686f2) {
-			return _0x1f4f93 % _0x4686f2;
-		},
-		'woGCf': function(_0x4cf6cf, _0x277768) {
-			return _0x4cf6cf < _0x277768;
-		}
-	}, _0x26c48f = _0x7a97af[_0x2ece02(0x1dc)];
-	let _0x4f5351 = '', _0x56ba39 = 0x0;
-	while (_0x7a97af[_0x2ece02(0x1e0)](_0x56ba39, 0x4)) {
-		let _0x5068a0 = '';
-		for (let _0x4ff5b1 = 0x0; _0x7a97af['ohXbK'](_0x4ff5b1, 0x4); _0x4ff5b1++) {
-			const _0x571b74 = crypto['randomBytes'](0x1), _0x31ab9e = _0x7a97af[_0x2ece02(0x1cc)](_0x571b74[0x0], _0x26c48f[_0x2ece02(0x1da)]);
-			_0x5068a0 += _0x26c48f[_0x31ab9e];
-		}
-		_0x4f5351 += _0x5068a0, _0x7a97af[_0x2ece02(0x1ce)](_0x56ba39, 0x3) && (_0x4f5351 += '-'), _0x56ba39++;
-	}
-	return _0x4f5351;
-}
-function AntonKeyGen4() {
-	const _0x283365 = _0x2fd2f5, _0x9221b6 = {
-		'pFIrd': 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',
-		'bFonW': function(_0x31056f, _0xa735d5) {
-			return _0x31056f % _0xa735d5;
-		},
-		'oiLSa': function(_0x1ae59d, _0xf72e83) {
-			return _0x1ae59d < _0xf72e83;
-		}
-	}, _0x254b66 = _0x9221b6[_0x283365(0x1d3)];
-	let _0x4439a0 = '', _0x52089e = 0x0;
-	while (_0x52089e < 0x3) {
-		let _0x436925 = '';
-		for (let _0x3ce299 = 0x0; _0x3ce299 < 0x4; _0x3ce299++) {
-			const _0x4e4f63 = crypto['randomBytes'](0x1), _0x5e5733 = _0x9221b6[_0x283365(0x1d0)](_0x4e4f63[0x0], _0x254b66['length']);
-			_0x436925 += _0x254b66[_0x5e5733];
-		}
-		_0x4439a0 += _0x436925, _0x9221b6['oiLSa'](_0x52089e, 0x2) && (_0x4439a0 += '-'), _0x52089e++;
-	}
-	return _0x4439a0;
-}
-function AntonKeyGen5() {
-	const _0x5f1108 = _0x2fd2f5, _0x3dc8fa = {
-		'CtccN': function(_0x3c43db, _0x108807) {
-			return _0x3c43db < _0x108807;
-		},
-		'vMUNb': function(_0xfa78c3, _0x2e440b) {
-			return _0xfa78c3 % _0x2e440b;
-		}
-	}, _0x44256f = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-	let _0x14f0a5 = '', _0x9f70c5 = 0x0;
-	while (_0x3dc8fa[_0x5f1108(0x1c0)](_0x9f70c5, 0x3)) {
-		let _0x5af2aa = '';
-		for (let _0x17abea = 0x0; _0x3dc8fa[_0x5f1108(0x1c0)](_0x17abea, 0x4); _0x17abea++) {
-			const _0xa89f64 = crypto[_0x5f1108(0x1c8)](0x1), _0x539191 = _0x3dc8fa[_0x5f1108(0x1d2)](_0xa89f64[0x0], _0x44256f['length']);
-			_0x5af2aa += _0x44256f[_0x539191];
-		}
-		_0x14f0a5 += _0x5af2aa, _0x9f70c5 < 0x2 && (_0x14f0a5 += '-'), _0x9f70c5++;
-	}
-	return _0x14f0a5;
-}
-function _0x13fe(_0x12eb81, _0x3b3c1e) {
-	const _0x2babbd = _0x2bab();
-	return _0x13fe = function(_0x13fe00, _0x12df4d) {
-		_0x13fe00 = _0x13fe00 - 0x1c0;
-		let _0x3e2d23 = _0x2babbd[_0x13fe00];
-		return _0x3e2d23;
-	}, _0x13fe(_0x12eb81, _0x3b3c1e);
-}
-function AntonKeyGen6() {
-	const _0x5beb7c = _0x2fd2f5, _0x143d46 = {
-		'PMxGO': function(_0x41485d, _0xea96cd) {
-			return _0x41485d < _0xea96cd;
-		},
-		'SVHEq': function(_0x17dea0, _0x2bb47f) {
-			return _0x17dea0 < _0x2bb47f;
-		},
-		'aAeah': function(_0x1a8436, _0x248376) {
-			return _0x1a8436 % _0x248376;
-		}
-	}, _0x326804 = _0x5beb7c(0x1dd);
-	let _0x84d369 = '', _0x57877a = 0x0;
-	while (_0x143d46[_0x5beb7c(0x1cb)](_0x57877a, 0x3)) {
-		let _0x342282 = '';
-		for (let _0x510524 = 0x0; _0x143d46['SVHEq'](_0x510524, 0x4); _0x510524++) {
-			const _0x28489d = crypto[_0x5beb7c(0x1c8)](0x1), _0x590bba = _0x143d46[_0x5beb7c(0x1c4)](_0x28489d[0x0], _0x326804['length']);
-			_0x342282 += _0x326804[_0x590bba];
-		}
-		_0x84d369 += _0x342282, _0x143d46[_0x5beb7c(0x1cb)](_0x57877a, 0x2) && (_0x84d369 += '-'), _0x57877a++;
-	}
-	return _0x84d369;
-}
-module[_0x2fd2f5(0x1ca)] = {
-	'AntonKeyGen': AntonKeyGen,
-	'AntonKeyGen2': AntonKeyGen2,
-	'AntonKeyGen3': AntonKeyGen3,
-	'AntonKeyGen4': AntonKeyGen4,
-	'AntonKeyGen5': AntonKeyGen5,
-	'AntonKeyGen6': AntonKeyGen6
+
+// Fungsi untuk jenis kunci yang berbeda
+const AntonKeyGen = () => generateKey(4, 4, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789');
+const AntonKeyGen2 = () => generateKey(4, 4, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ');
+const AntonKeyGen3 = () => generateKey(4, 4, '0123456789');
+const AntonKeyGen4 = () => generateKey(3, 4, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789');
+const AntonKeyGen5 = () => generateKey(3, 4, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ');
+const AntonKeyGen6 = () => generateKey(3, 4, '0123456789');
+const AntonKeyGen7 = () => crypto.randomBytes(16).toString('hex');
+
+// Menghasilkan kunci
+const key1 = AntonKeyGen();
+const key2 = AntonKeyGen2();
+const key3 = AntonKeyGen3();
+const key4 = AntonKeyGen4();
+const key5 = AntonKeyGen5();
+const key6 = AntonKeyGen6();
+const key7 = AntonKeyGen7();
+
+// Ekspor modul
+module.exports = {
+  key1,
+  key2,
+  key3,
+  key4,
+  key5,
+  key6,
+  key7
 };
