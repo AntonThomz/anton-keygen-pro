@@ -1,43 +1,57 @@
 const crypto = require('crypto');
 
+/**
+ * Menghasilkan kunci dengan format tertentu.
+ * @param {number} segmentCount - Jumlah segmen dalam kunci.
+ * @param {number} segmentLength - Panjang setiap segmen.
+ * @param {string} characters - Karakter yang digunakan untuk menghasilkan kunci.
+ * @returns {string} Kunci yang dihasilkan.
+ */
 function generateKey(segmentCount, segmentLength, characters) {
-  let key = '';
-  for (let i = 0; i < segmentCount; i++) {
-    let segment = '';
-    for (let j = 0; j < segmentLength; j++) {
-      const randomIndex = crypto.randomInt(0, characters.length);
-      segment += characters[randomIndex];
-    }
-    key += segment + (i < segmentCount - 1 ? '-' : '');
+  if (segmentCount <= 0 || segmentLength <= 0 || characters.length === 0) {
+    throw new Error('Parameter tidak valid untuk menghasilkan kunci.');
   }
-  return key;
+
+  return Array.from({ length: segmentCount }, () => {
+    return Array.from({ length: segmentLength }, () => {
+      const randomIndex = crypto.randomInt(0, characters.length);
+      return characters[randomIndex];
+    }).join('');
+  }).join('-');
 }
 
-// Fungsi untuk jenis kunci yang berbeda
-const AntonKeyGen = () => generateKey(4, 4, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789');
-const AntonKeyGen2 = () => generateKey(4, 4, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ');
-const AntonKeyGen3 = () => generateKey(4, 4, '0123456789');
-const AntonKeyGen4 = () => generateKey(3, 4, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789');
-const AntonKeyGen5 = () => generateKey(3, 4, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ');
-const AntonKeyGen6 = () => generateKey(3, 4, '0123456789');
-const AntonKeyGen7 = () => crypto.randomBytes(16).toString('hex');
+// Fungsi untuk menghasilkan berbagai jenis kunci
+function createKey(type) {
+  switch (type) {
+    case 'alphanumeric':
+      return generateKey(4, 4, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789');
+    case 'alphabetic':
+      return generateKey(4, 4, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ');
+    case 'numeric':
+      return generateKey(4, 4, '0123456789');
+    case 'custom1':
+      return generateKey(3, 4, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789');
+    case 'custom2':
+      return generateKey(3, 4, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ');
+    case 'custom3':
+      return generateKey(3, 4, '0123456789');
+    case 'randomHex':
+      return crypto.randomBytes(16).toString('hex');
+    default:
+      throw new Error('Tipe kunci tidak dikenal.');
+  }
+}
 
 // Menghasilkan kunci
-const key1 = AntonKeyGen();
-const key2 = AntonKeyGen2();
-const key3 = AntonKeyGen3();
-const key4 = AntonKeyGen4();
-const key5 = AntonKeyGen5();
-const key6 = AntonKeyGen6();
-const key7 = AntonKeyGen7();
+const anton = {
+  key1: createKey('alphanumeric'),
+  key2: createKey('alphabetic'),
+  key3: createKey('numeric'),
+  key4: createKey('custom1'),
+  key5: createKey('custom2'),
+  key6: createKey('custom3'),
+  key7: createKey('randomHex'),
+};
 
 // Ekspor modul
-module.exports = {
-  key1,
-  key2,
-  key3,
-  key4,
-  key5,
-  key6,
-  key7
-};
+module.exports = anton;

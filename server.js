@@ -1,7 +1,7 @@
 const express = require('express');
 const http = require('http');
 const WebSocket = require('ws');
-const { key7 } = require("./index"); // Mengimpor kunci dari 'index'
+const anton = require("./index"); // Mengimpor kunci dari 'index'
 const app = express();
 const port = 3005;
 
@@ -9,7 +9,7 @@ app.use(express.json());
 
 // Route untuk generate key (menggunakan AntonKeyGen7)
 app.get('/generate-key', (req, res) => {
-  res.json({ key: key7 }); // Mengirim key yang dihasilkan oleh AntonKeyGen7
+  res.json({ key: anton.key7 }); // Mengirim key yang dihasilkan oleh AntonKeyGen7
 });
 
 // Membuat HTTP server dan WebSocket server
@@ -20,7 +20,7 @@ const wss = new WebSocket.Server({ server });
 wss.on('connection', (ws) => {
   console.log('Client connected');
   
-  ws.send(`Generated key: ${key7}`); // Kirim kunci ke client saat koneksi terhubung
+  ws.send(`Generated key: ${anton.key7}`); // Kirim kunci ke client saat koneksi terhubung
 
   // Event untuk menerima pesan dari client
   ws.on('message', (message) => {
